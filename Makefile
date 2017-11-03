@@ -13,7 +13,7 @@ itwom3.0.o: itwom3.0.cpp
 
 pyitwom3.so: itwom3.0.cpp itwom3.0.h pyitwom3.i itwom3.0.o
 	swig -c++ -python pyitwom3.i
-	$(CC) -fpic -march=x86-64 -mcmodel=medium -pipe -fomit-frame-pointer -ffast-math -I/usr/include/python3.5 -c pyitwom3_wrap.cxx
+	$(CC) -fpic -march=x86-64 -mcmodel=medium -pipe -fomit-frame-pointer -ffast-math -I/usr/include/python2.7 -c pyitwom3_wrap.cxx
 	$(CC) -shared itwom3.0.o pyitwom3_wrap.o -o _pyitwom3.so
 
 libitwom3.0.so: itwom3.0.o
